@@ -1,0 +1,8 @@
+.idea
+gnu-efi
+fs
+elf.h
+memory_map.h
+main.o
+main.so
+main.efi
