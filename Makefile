@@ -3,10 +3,10 @@ ARCH            = $(shell uname -m | sed s,i[3456789]86,ia32,)
 OBJS            = main.o
 TARGET          = main.efi
 
-EFIINC          = /usr/local/include/efi
+EFIINC          = /usr/include/efi
 EFIINCS         = -I$(EFIINC) -I$(EFIINC)/$(ARCH) -I$(EFIINC)/protocol
 LIB             = /usr/lib64
-EFILIB          = /usr/local/lib
+EFILIB          = /usr/lib
 EFI_CRT_OBJS    = $(EFILIB)/crt0-efi-$(ARCH).o
 EFI_LDS         = $(EFILIB)/elf_$(ARCH)_efi.lds
 
