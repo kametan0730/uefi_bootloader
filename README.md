@@ -10,15 +10,15 @@ MikanLoaderPkgはEDK2を利用しており、ビルドするには謎のシェ�
 多少、自作OSの変更に合わせて改造しているため、そのままではmikanosでは動作しません。
 
 ## Requirements
-
 - gcc
 - make
 - gnu-efi
 - ovmf
+- qemu-system-x86
 
 ## Build
 ```
-sudo apt install build-essential gnu-efi ovmf
+sudo apt install build-essential gnu-efi
 git clone https://github.com/kametan0730/uefi_bootloader loader
 cd loader
 ```
@@ -27,7 +27,15 @@ memory_map.hをどこからか用意して配置
 make
 ```
 
-## 改変箇所
+## Run
+```
+sudo apt install ovmf qemu-system-x86
+```
+起動するカーネルをfs/下に配置
+```
+make qemu
+```
 
+## 改変箇所
 - EDK2の依存をなくし、UEFI関連コードはgnu-efiのものを使用するように
 - グラフィック関連のコードを削除
